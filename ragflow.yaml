@@ -1,23 +1,10 @@
-ingestion:
-  type: filesystem
-  path: ./my-surveys-pdfs   # your local corpus directory
-
-embeddings:
-  provider: huggingface
-  model: sentence-transformers/all-MiniLM-L6-v2
-
-vectordb:
-  provider: chroma
-  persist_directory: ./.ragflow_db
-
-retrievers:
-  - type: local
-  - type: web_search
-    provider: serpapi
-    api_key: ${SERPAPI_API_KEY}
-    num_results: 5
-
-generation:
-  provider: openrouter
-  model: deepseek-coder:latest
-  api_key: ${OPENROUTER_API_KEY}
+services:
+  - type: web
+    name: ragflow-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    plan: free
+    envVars:
+      - key: BRAVE_API_KEY
+        value: BSASLP9R6pq7YQqyRY7su1aJv8VmhSg
