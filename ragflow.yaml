@@ -1,8 +1,6 @@
-# ragflow.yaml
-
 ingestion:
   type: filesystem
-  path: ./my-surveys-pdfs
+  path: ./my-surveys-pdfs   # your local corpus directory
 
 embeddings:
   provider: huggingface
