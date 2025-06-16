@@ -3,3 +3,4 @@ uvicorn
 python-docx
 PyMuPDF
 httpx
+git+https://github.com/infiniflow/ragflow.git
