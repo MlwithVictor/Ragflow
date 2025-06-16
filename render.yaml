@@ -2,7 +2,7 @@ services:
   - type: web
     name: ragflow-api
     env: python
-    runtime: python3
+    runtime: python-3.10.13
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host=0.0.0.0 --port=10000
     plan: free
