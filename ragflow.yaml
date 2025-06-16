@@ -1,0 +1,25 @@
+# ragflow.yaml
+
+ingestion:
+  type: filesystem
+  path: ./my-surveys-pdfs
+
+embeddings:
+  provider: huggingface
+  model: sentence-transformers/all-MiniLM-L6-v2
+
+vectordb:
+  provider: chroma
+  persist_directory: ./.ragflow_db
+
+retrievers:
+  - type: local
+  - type: web_search
+    provider: serpapi
+    api_key: ${SERPAPI_API_KEY}
+    num_results: 5
+
+generation:
+  provider: openrouter
+  model: deepseek-coder:latest
+  api_key: ${OPENROUTER_API_KEY}
