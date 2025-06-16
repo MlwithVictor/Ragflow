@@ -1,4 +1,5 @@
-git+https://github.com/infiniflow/ragflow.git@main#egg=ragflow
-sentence-transformers>=2.2.2
-chromadb>=0.1.0
-openrouter>=0.2.0
+fastapi
+uvicorn
+python-docx
+PyMuPDF
+httpx
